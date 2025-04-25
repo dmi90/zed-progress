@@ -40,9 +40,9 @@
 
 <script>
     const labels = [
-        "Budapest", "Siófok", "Pécs", "Pécs", "Zalaegerszeg", "Graz",
-        "Szombathely", "Bratislava", "Budapest", "Gyöngyös",
-        "Miskolc", "Debrecen", "Békéscsaba", "Szolnok", "Budapest"
+        "Budapest", "Day 1: Siófok", "Day 2: Pécs", "Day 3: Pécs", "Day 4: Zalaegerszeg", "Day 5: Graz",
+        "Day 6: Szombathely", "Day 7: Bratislava", "Day 8: Budapest", "Day 9: Gyöngyös",
+        "Day 10: Miskolc", "Day 11: Debrecen", "Day 12: Békéscsaba", "Day 13: Szolnok", "Day 14: Budapest"
     ];
 
     const actual = [
@@ -56,6 +56,8 @@
         1364.8, 1411.5, 1586.4, 1777.7,
         1883.1, 2044.3, 2189.3, 2357.7, 2429.8
     ];
+
+    const difference = goal.map((g, i) => g - actual[i]);
 
     const ctx = document.getElementById('kmChart').getContext('2d');
 
@@ -77,6 +79,14 @@
                 backgroundColor: 'rgba(0, 255, 255, 0.2)',
                 fill: false,
                 tension: 0.4
+            },
+            {
+                label: 'Distance left (km)',
+                data: [],
+                borderColor: 'lime',
+                backgroundColor: 'rgba(0, 255, 0, 0.2)',
+                fill: false,
+                tension: 0.4
             }
         ]
     };
@@ -91,7 +101,7 @@
                 y: {
                     beginAtZero: true,
                     min: 0,
-                    max: 2500,
+                    max: 3000,
                     title: {
                         display: true,
                         text: 'Kilometers',
@@ -137,6 +147,7 @@
 
     const interpolatedActual = [];
     const interpolatedGoal = [];
+    const interpolatedDifference = [];
     const interpolatedLabels = [];
 
     const stepsPerSegment = Math.floor(totalFrames / (actual.length - 1));
@@ -146,18 +157,23 @@
             const t = j / stepsPerSegment;
             interpolatedActual.push(actual[i] + (actual[i + 1] - actual[i]) * t);
             interpolatedGoal.push(goal[i] + (goal[i + 1] - goal[i]) * t);
+            interpolatedDifference.push(
+                (goal[i] - actual[i]) + ((goal[i + 1] - actual[i + 1]) - (goal[i] - actual[i])) * t
+            );
             interpolatedLabels.push(j === stepsPerSegment - 1 ? labels[i + 1] : "");
         }
     }
 
     interpolatedActual.push(actual[actual.length - 1]);
     interpolatedGoal.push(goal[goal.length - 1]);
+    interpolatedDifference.push(difference[difference.length - 1]);
     interpolatedLabels.push(labels[labels.length - 1]);
 
     function animateChart() {
         if (frame < interpolatedActual.length) {
             data.datasets[0].data.push(interpolatedActual[frame]);
             data.datasets[1].data.push(interpolatedGoal[frame]);
+            data.datasets[2].data.push(interpolatedDifference[frame]);
             data.labels.push(interpolatedLabels[frame]);
             kmChart.update();
             frame++;
@@ -167,5 +183,6 @@
 
     animateChart();
 </script>
+
 </body>
 </html>
