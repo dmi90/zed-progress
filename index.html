@@ -151,7 +151,7 @@
     const kmChart = new Chart(ctx, config);
 
     let frame = 0;
-    const totalFrames = 300;
+    const totalFrames = 600;
 
     const interpolatedActual = [];
     const interpolatedGoal = [];
@@ -175,7 +175,7 @@
     interpolatedActual.push(actual[actual.length - 1]);
     interpolatedGoal.push(goal[goal.length - 1]);
     interpolatedDifference.push(difference[difference.length - 1]);
-    interpolatedLabels.push(labels[labels.length - 1]);
+    // interpolatedLabels.push(labels[labels.length - 1]);
 
     function animateChart() {
         if (frame < interpolatedActual.length) {
