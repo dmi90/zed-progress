@@ -5,11 +5,23 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Zed progress | Home</title>
     <link rel="stylesheet" href="index.css">
+    <script defer src="script.js"></script>
+    
 </head>
 <body>
     <div class="btn-container">
-        <button id="btn1"><a href="c1.html">1st CYCLEATHON</a></button>
-        <button id="btn2"><a href="c2.html">2nd CYCLEATHON</a></button>
+        <button id="btn1">1st CYCLEATHON</button>
+        <button id="btn2">2nd CYCLEATHON</button>
     </div>
+    <div class="popup-bg" id="popup">
+        <div class="popup-content">
+            <p>CHOOSE: GRAPH or MAP?</p>
+            <button onclick="redirect('graph')">GRAPH</button>
+            <button onclick="redirect('map')">MAP</button>
+            <br>
+            <button onclick="closePopup()">CANCEL</button>
+        </div>
+    </div>
+
 </body>
 </html>
