@@ -1,0 +1,36 @@
+body
+{
+    min-height: 100vh;
+    margin: 0;
+    background: linear-gradient(to bottom, #CEFF02 0%, #E209AF 60%, #0C063D 100%);
+}
+
+.btn-container {
+    margin: 0;
+    height: 90vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 3%;
+}
+
+#btn1, #btn2
+{
+	border-radius: 7px;
+	background-color: #06c08b;
+	box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
+	transition: background 0.3s ease, box-shadow 0.2s ease;
+    font-size: 5vw;
+}
+
+#btn1 a, #btn2 a
+{
+    color: #202020;
+    text-decoration: none;
+}
+
+#btn1:hover, #btn2:hover
+{
+	background: rgb(98, 255, 0);
+	box-shadow: 0 4px 10px rgba(0, 227, 57, 0.23);
+}
