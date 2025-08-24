@@ -1,11 +1,12 @@
-body
+body 
 {
     min-height: 100vh;
     margin: 0;
     background: linear-gradient(to bottom, #CEFF02 0%, #E209AF 60%, #0C063D 100%);
 }
 
-.btn-container {
+.btn-container 
+{
     margin: 0;
     height: 100vh;
     display: flex;
@@ -14,28 +15,30 @@ body
     gap: 3%;
 }
 
-#btn1, #btn2
+#btn1, #btn2 
 {
-	border-radius: 7px;
-	background-color: #06c08b;
-	box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
-	transition: background 0.3s ease, box-shadow 0.2s ease;
-    font-size: 5vw;
+    border-radius: 0.5rem;
+    background-color: #06c08b;
+    box-shadow: 0 0.25rem 0.9rem 0 rgb(0 118 255 / 39%);
+    transition: background 0.3s ease, box-shadow 0.2s ease;
+    font-size: clamp(1rem, 5vw, 2.5rem);
+    padding: 0.6rem 1.2rem;
 }
 
-#btn1 a, #btn2 a
+#btn1 a, #btn2 a 
 {
     color: #202020;
     text-decoration: none;
 }
 
-#btn1:hover, #btn2:hover
+#btn1:hover, #btn2:hover 
 {
-	background: rgb(98, 255, 0);
-	box-shadow: 0 4px 10px rgba(0, 227, 57, 0.23);
+    background: rgb(98, 255, 0);
+    box-shadow: 0 0.25rem 0.6rem rgba(0, 227, 57, 0.23);
 }
 
-.popup-bg {
+.popup-bg 
+{
     display: none;
     position: fixed;
     top: 0;
@@ -47,37 +50,41 @@ body
     align-items: center;
 }
 
-
-.popup-content {
-    background: rgb(255, 0, 191);
-    padding: 20px;
-    border-radius: 8px;
-    text-align: center;
-    min-width: 250px;
-}
-
-.popup-content button {
-    margin: 10px;
-    font-size: 1vw;
-    border-radius: 7px;
-	background-color: #1e54be;
-	box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
-	transition: background 0.3s ease, box-shadow 0.2s ease;
-}
-
-p
+.popup-content 
 {
+    background: rgb(255, 0, 191);
+    padding: 1.25rem;
+    border-radius: 0.5rem;
+    text-align: center;
+    min-width: 15rem;
+    max-width: 90%;
+}
+
+.popup-content p 
+{
+    font-size: clamp(1rem, 2.5vw, 1.5rem);
     font-weight: bolder;
 }
 
-.cicatlon
+.popup-content button 
+{
+    margin: 0.6rem;
+    font-size: clamp(0.9rem, 2vw, 1.2rem);
+    border-radius: 0.5rem;
+    background-color: #1e54be;
+    box-shadow: 0 0.25rem 0.9rem 0 rgb(0 118 255 / 39%);
+    transition: background 0.3s ease, box-shadow 0.2s ease;
+    padding: 0.5rem 1rem;
+}
+
+.cicatlon 
 {
     text-align: center;
 }
 
-.cicaDate
+.cicaDate 
 {
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: clamp(1rem, 3vw, 1.8rem);
     color: #090909;
 }
