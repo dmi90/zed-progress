@@ -20,7 +20,7 @@ body
 	background-color: #06c08b;
 	box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
 	transition: background 0.3s ease, box-shadow 0.2s ease;
-    font-size: 5vw;
+    font-size: 6em;
 }
 
 #btn1 a, #btn2 a
@@ -35,7 +35,8 @@ body
 	box-shadow: 0 4px 10px rgba(0, 227, 57, 0.23);
 }
 
-.popup-bg {
+.popup-bg 
+{
     display: none;
     position: fixed;
     top: 0;
@@ -48,7 +49,8 @@ body
 }
 
 
-.popup-content {
+.popup-content 
+{
     background: rgb(255, 0, 191);
     padding: 20px;
     border-radius: 8px;
@@ -56,9 +58,15 @@ body
     min-width: 250px;
 }
 
-.popup-content button {
+.popup-content p 
+{
+    font-size: 1.5em;
+}
+
+.popup-content button 
+{
     margin: 10px;
-    font-size: 1vw;
+    font-size: 2em;
     border-radius: 7px;
 	background-color: #1e54be;
 	box-shadow: 0 4px 14px 0 rgb(0 118 255 / 39%);
@@ -78,6 +86,6 @@ p
 .cicaDate
 {
     font-family: monospace;
-    font-size: 1.5vw;
+    font-size: 2.3em;
     color: #090909;
 }
