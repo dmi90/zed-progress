@@ -9,13 +9,13 @@ body
 {
     margin: 0;
     height: 100vh;
-    display: flex;
+    display: grid;
     justify-content: center;
     align-items: center;
-    gap: 3%;
+    gap: 2%;
 }
 
-#btn1, #btn2 
+#btn1, #btn2, #btn3
 {
     border-radius: 0.5rem;
     background-color: #06c08b;
@@ -25,13 +25,13 @@ body
     padding: 0.6rem 1.2rem;
 }
 
-#btn1 a, #btn2 a 
+#btn1 a, #btn2 a, #btn3 a
 {
     color: #202020;
     text-decoration: none;
 }
 
-#btn1:hover, #btn2:hover 
+#btn1:hover, #btn2:hover, #btn3:hover
 {
     background: rgb(98, 255, 0);
     box-shadow: 0 0.25rem 0.6rem rgba(0, 227, 57, 0.23);
